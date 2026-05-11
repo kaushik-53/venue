@@ -31,6 +31,16 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 // Routes
+app.get('/', (req, res) => {
+  res.send(`
+    <div style="font-family: serif; text-align: center; padding-top: 100px; background-color: #FDFCFB; height: 100vh; color: #1c1917;">
+      <h1 style="font-size: 3rem; margin-bottom: 10px;">RoyalAisle</h1>
+      <p style="color: #C8A97E; text-transform: uppercase; letter-spacing: 0.3em; font-size: 0.8rem; font-weight: 900;">API is Live & Optimized</p>
+      <div style="margin-top: 40px; font-size: 0.9rem; color: #a8a29e;">Wedding Venue Finder Backend Service</div>
+    </div>
+  `)
+})
+
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', message: 'Wedding Venue Finder API is running 🎉' })
 })
